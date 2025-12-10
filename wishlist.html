@@ -30,7 +30,8 @@
 <body>
 
 <header>
-    <h1>NorthStar Christmas Hub</h1>
+    <div id="countdown"></div><h1>NorthStar Christmas Hub</h1>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="wishlist.html">Wishlist</a>
@@ -67,7 +68,9 @@
 </section>
 
 <footer>
-    NorthStar Digital Works — Warm. Magical. Modern.
+   <p id="footerP">NorthStar Christmas Hub</p>
+
+        Kayden.davis@fhnw.edu
 </footer>
 
 
@@ -81,8 +84,10 @@
     
     function addItem() {
         const title = document.getElementById("itemTitle").value;
-        const desc = document.getElementById("itemDesc").value;
+        
         const img = document.getElementById("itemImg").value;
+
+        const desc = document.getElementById("itemDesc").value;
 
        
         if (!title || !desc || !img) {
@@ -113,3 +118,27 @@
 
 </body>
 </html>
+
+<script>
+    function updateCountdown() {
+        const today = new Date();
+        const christmas = new Date(today.getFullYear(), 11, 25); // December = 11
+
+        // If Christmas is over, count down to next year
+        if (today > christmas) {
+            christmas.setFullYear(christmas.getFullYear() + 1);
+        }
+
+        // Calculate days left
+        const oneDay = 1000 * 60 * 60 * 24;
+        const daysLeft = Math.ceil((christmas - today) / oneDay);
+
+        document.getElementById("countdown").textContent =
+            daysLeft + " days until Christmas 🎄";
+    }
+
+    // Update every day
+    updateCountdown();
+    setInterval(updateCountdown, 86400000);
+</script>
+
