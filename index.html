@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NorthStar Christmas Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+
+    
+    <header>
+        <h1>NorthStar Christmas Hub</h1>
+
+        <div id="countdown"></div>
+        <nav>
+            <a href="wishlist.html">Wishlist</a>
+            <a href="recipe.html"> Recipes</a>
+            <a href="#home">Home</a>
+            <a href="#media">Media</a>
+        </nav>
+
+        
+
+    </header>
+
+    <!-- hero -->
+    <section class="hero" id="home">
+        <h2>Your Holiday Season Starts Here</h2>
+        <p>Where holiday magic feels at home.</p>
+        <a class="btn" href="#wishlist">See Wishlist</a>
+    </section>
+
+    <!-- about Northstar -->
+    <section class="section">
+        <h3>About NorthStar Digital Works</h3>
+        <p class="center-text">
+            NorthStar creates seasonal, family-focused digital experiences that bring people together 
+            through storytelling, planning tools, and festive multimedia.
+        </p>
+    </section>
+
+    <!-- wishlist thing -->
+    <section class="section" id="wishlist">
+        <h3>Wishlist Items</h3>
+
+        <div class="features-grid">
+            <div class="card">
+                <img src="./Images/photo8.jpg" alt="">
+                <h4>Cozy Holiday Sweater</h4>
+                <p>Warm, soft, and perfect for the season.</p>
+                <a class="btn" href="#">Go to Store →</a>
+            </div>
+
+            <div class="card">
+                <img src="./Images/photo4.jpg" alt="Gift">
+                <h4>Hot Cocoa Kit</h4>
+                <p>A delicious winter treat for cold nights.</p>
+                <a class="btn" href="#">Go to Store →</a>
+            </div>
+
+            <div class="card">
+                <img src="./Images/photo6.jpg" alt="Gift">
+                <h4>Holiday Lights</h4>
+                <p>Make your home sparkle with Christmas magic.</p>
+                <a class="btn" href="#">Go to Store →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- reipe page -->
+    <section class="section" id="recipes">
+        <h3>Festive Recipes</h3>
+
+        <div class="features-grid">
+            <div class="card">
+                <h4>Cranberry Baked Brie</h4>
+                <p>Warm, gooey brie wrapped in flaky pastry with tart cranberries and rich brown sugar—this is a guaranteed crowd-pleaser.
+</p>
+                <a class="btn" href="recipe.html">View Recipe</a>
+            </div>
+
+            <div class="card">
+                <h4>Honey Glazed Christmas Ham</h4>
+                <p>Sweet, sticky, and beautifully caramelized—this honey-glazed spiral ham is the centerpiece every Christmas table deserves.
+</p>
+                <a class="btn" href="recipe.html">View Recipe</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media -->
+    <section class="section media-section" id="media">
+        <h3>See the Magic Happen</h3>
+
+        
+
+        <h4 style="margin-top: 2rem;">Holiday Video</h4>
+        <video width="80%" controls>
+            <source src=".//Images/AI-Video-1.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p id="footerP">NorthStar Christmas Hub</p>
+
+        Kayden.davis@fhnw.edu
+    </footer>
+
+</body>
+</html>
+
+<script>
+    function updateCountdown() {
+        const today = new Date();
+        const christmas = new Date(today.getFullYear(), 11, 25); // December = 11
+
+        // If Christmas is over, count down to next year
+        if (today > christmas) {
+            christmas.setFullYear(christmas.getFullYear() + 1);
+        }
+
+        // Calculate days left
+        const oneDay = 1000 * 60 * 60 * 24;
+        const daysLeft = Math.ceil((christmas - today) / oneDay);
+
+        document.getElementById("countdown").textContent =
+            daysLeft + " days until Christmas 🎄";
+    }
+
+    // Update every day
+    updateCountdown();
+    setInterval(updateCountdown, 86400000);
+</script>
+

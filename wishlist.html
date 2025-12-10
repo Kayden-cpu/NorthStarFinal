@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - NorthStar Christmas Hub</title>
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        #formContainer {
+            display: none;
+            margin-top: 2rem;
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            max-width: 450px;
+        }
+
+        #wishlistItems img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>NorthStar Christmas Hub</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="recipe.html">Recipes</a>
+        <a href="index.html#media">Media</a>
+    </nav>
+</header>
+
+<section class="section">
+    <h3>Your Wishlist</h3>
+
+   
+    <button class="btn" onclick="toggleForm()">+ Add Wishlist Item</button>
+
+   
+    <div id="formContainer">
+        <h4>Add a New Item</h4>
+
+        <label>Title:</label>
+        <input id="itemTitle" type="text" placeholder="Ex: Cozy Blanket" style="width:100%; padding:8px; margin-bottom:10px;">
+
+        <label>Description:</label>
+        <textarea id="itemDesc" placeholder="Short description..." style="width:100%; padding:8px; margin-bottom:10px;"></textarea>
+
+        <label>Image URL:</label>
+        <input id="itemImg" type="text" placeholder="Paste an image link" style="width:100%; padding:8px;">
+
+        <button class="btn" style="margin-top:15px;" onclick="addItem()">Add Item</button>
+    </div>
+
+    <div class="features-grid" id="wishlistItems" style="margin-top:3rem;">
+       
+    </div>
+</section>
+
+<footer>
+    NorthStar Digital Works — Warm. Magical. Modern.
+</footer>
+
+
+<script>
+    
+    function toggleForm() {
+        const form = document.getElementById("formContainer");
+        form.style.display = form.style.display === "none" ? "block" : "none";
+    }
+
+    
+    function addItem() {
+        const title = document.getElementById("itemTitle").value;
+        const desc = document.getElementById("itemDesc").value;
+        const img = document.getElementById("itemImg").value;
+
+       
+        if (!title || !desc || !img) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        
+        const card = document.createElement("div");
+        card.className = "card";
+
+        
+        card.innerHTML = `
+            <h4>${title}</h4>
+            <p>${desc}</p>
+            <img src="${img}" alt="Wishlist Image">
+        `;
+
+        
+        document.getElementById("wishlistItems").appendChild(card);
+
+        
+        document.getElementById("itemTitle").value = "";
+        document.getElementById("itemDesc").value = "";
+        document.getElementById("itemImg").value = "";
+    }
+</script>
+
+</body>
+</html>
