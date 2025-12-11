@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media - NorthStar Christmas Hub</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        .media-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .media-gallery img {
+            width: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        .video-container {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        video {
+            width: 80%;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>NorthStar Christmas Hub</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="media.html">Media</a>
+    </nav>
+</header>
+
+<section class="section">
+    <h3>Holiday Pictures!</h3>
+
+    
+    <div class="media-gallery">
+
+        <img src="https://images.unsplash.com/photo-1608889175123-e07c89e221df?q=80" alt="Kids opening gifts">
+
+        <img src="https://images.unsplash.com/photo-1547041386-3b01e624fc19?q=80" alt="Kids opening presents">
+
+        <img src="https://images.unsplash.com/photo-1512388592581-5d79f4b4c0a8?q=80" alt="Family Christmas morning">
+
+        <img src="https://images.unsplash.com/photo-1576320593389-0fe46d5f27c9?q=80" alt="Children unwrapping gifts">
+
+    </div>
+
+   
+    <div class="video-container">
+        <h3>Holiday Videos</h3>
+         <video width="80%" controls>
+            <source src=".//Images/AI-Video-1.mp4" type="video/mp4">
+        </video>
+        
+    </div>
+
+</section>
+
+<footer>
+    NorthStar Digital Works — Warm. Magical. Modern.
+</footer>
+
+</body>
+</html>
