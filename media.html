@@ -37,10 +37,13 @@
 
 <header>
     <h1>NorthStar Christmas Hub</h1>
+
+<div id="countdown"></div>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="wishlist.html">Wishlist</a>
-        <a href="recipes.html">Recipes</a>
+        <a href="recipe.html">Recipes</a>
         <a href="media.html">Media</a>
     </nav>
 </header>
@@ -51,13 +54,15 @@
     
     <div class="media-gallery">
 
-        <img src="https://images.unsplash.com/photo-1608889175123-e07c89e221df?q=80" alt="Kids opening gifts">
+    <img src="/MediaImages/gift1.jpeg" alt="">
 
-        <img src="https://images.unsplash.com/photo-1547041386-3b01e624fc19?q=80" alt="Kids opening presents">
+      <img src="/MediaImages/gift2.jpeg" alt="">
 
-        <img src="https://images.unsplash.com/photo-1512388592581-5d79f4b4c0a8?q=80" alt="Family Christmas morning">
+     <img src="/MediaImages/gift3.jpeg" alt="">
 
-        <img src="https://images.unsplash.com/photo-1576320593389-0fe46d5f27c9?q=80" alt="Children unwrapping gifts">
+    <img src="/MediaImages/gift4.jpeg" alt="">
+
+    
 
     </div>
 
@@ -73,8 +78,34 @@
 </section>
 
 <footer>
-    NorthStar Digital Works — Warm. Magical. Modern.
+   <p id="footerP">NorthStar Christmas Hub</p>
+
+        Kayden.davis@fhnw.edu
 </footer>
 
 </body>
 </html>
+
+
+<script>
+    function updateCountdown() {
+        const today = new Date();
+        const christmas = new Date(today.getFullYear(), 11, 25); // December = 11
+
+        // If Christmas is over, count down to next year
+        if (today > christmas) {
+            christmas.setFullYear(christmas.getFullYear() + 1);
+        }
+
+        // Calculate days left
+        const oneDay = 1000 * 60 * 60 * 24;
+        const daysLeft = Math.ceil((christmas - today) / oneDay);
+
+        document.getElementById("countdown").textContent =
+            daysLeft + " days until Christmas 🎄";
+    }
+
+    // Update every day
+    updateCountdown();
+    setInterval(updateCountdown, 86400000);
+</script>

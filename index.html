@@ -97,7 +97,7 @@
 
         
 
-        <h4 style="margin-top: 2rem;">Holiday Video</h4>
+        <h4 style="margin-top: 2rem;">Spread Joy and Kindness!</h4>
         <video width="80%" controls>
             <source src=".//Images/AI-Video-1.mp4" type="video/mp4">
         </video>
@@ -113,17 +113,19 @@
 </body>
 </html>
 
+
+<!-- script for the christmas countdown -->
 <script>
     function updateCountdown() {
         const today = new Date();
-        const christmas = new Date(today.getFullYear(), 11, 25); // December = 11
+        const christmas = new Date(today.getFullYear(), 11, 25); 
 
-        // If Christmas is over, count down to next year
+       
         if (today > christmas) {
             christmas.setFullYear(christmas.getFullYear() + 1);
         }
 
-        // Calculate days left
+        
         const oneDay = 1000 * 60 * 60 * 24;
         const daysLeft = Math.ceil((christmas - today) / oneDay);
 
@@ -131,7 +133,7 @@
             daysLeft + " days until Christmas 🎄";
     }
 
-    // Update every day
+    
     updateCountdown();
     setInterval(updateCountdown, 86400000);
 </script>
